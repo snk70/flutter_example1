@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 double width = 0;
@@ -21,7 +22,6 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double x = 56;
     return Directionality(
         textDirection: TextDirection.rtl,
         child: MaterialApp(
@@ -34,15 +34,29 @@ class MyWidget extends StatelessWidget {
                 ),
                 centerTitle: false,
                 elevation: 10,
-                actions: const [
+                actions: [
                   Padding(
                     padding: EdgeInsets.fromLTRB(6, 5, 50, 5),
                     // padding: EdgeInsets.all(8),
-                    child: Icon(Icons.access_alarm),
+                    child: InkWell(
+                      child: const Icon(Icons.access_alarm),
+                      onTap: () {
+                        if (kDebugMode) {
+                          print("Alarm BTN Clicked!!");
+                        }
+                      },
+                    ),
                   )
                 ],
                 // ignore: prefer_const_constructors
-                // leading: Icon(Icons.access_alarm),
+                leading: InkWell(
+                  child: const Icon(Icons.search),
+                  onTap: () {
+                    if (kDebugMode) {
+                      print("Search BTN Clicked!!1");
+                    }
+                  },
+                ),
               ),
               body: Center(
                   child: MaterialButton(
