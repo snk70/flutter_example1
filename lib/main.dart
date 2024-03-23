@@ -14,7 +14,15 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Center(
+        // debugShowCheckedModeBanner: false ,
+        home: Scaffold(
+      appBar: AppBar(
+        title: const Text("Sina"),
+        centerTitle: false,
+        // ignore: prefer_const_constructors
+        leading: Icon(Icons.access_alarm),
+      ),
+      body: Center(
           child: MaterialButton(
               onPressed: () {},
               child: const Text(
@@ -22,6 +30,6 @@ class MyWidget extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 20, color: Color.fromARGB(255, 100, 100, 100)),
               ))),
-    );
+    ));
   }
 }
