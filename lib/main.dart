@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+
 double width = 0;
 void main() {
   // runApp(MaterialApp(home: Text("Sina TH",textAlign: TextAlign.center,style:TextStyle(color: Colors.red) ,),));
@@ -30,13 +31,16 @@ class MyWidget extends StatelessWidget {
               appBar: AppBar(
                 title: const Align(
                   alignment: Alignment.centerRight,
-                  child: Text("سینا"),
+                  child: Text(
+                    "سینا",
+                    style: TextStyle(fontFamily: "MyFont"),
+                  ),
                 ),
                 centerTitle: false,
                 elevation: 10,
                 actions: [
                   Padding(
-                    padding: EdgeInsets.fromLTRB(6, 5, 50, 5),
+                    padding: const EdgeInsets.fromLTRB(6, 5, 50, 5),
                     // padding: EdgeInsets.all(8),
                     child: InkWell(
                       child: const Icon(Icons.access_alarm),
@@ -50,7 +54,8 @@ class MyWidget extends StatelessWidget {
                 ],
                 // ignore: prefer_const_constructors
                 leading: InkWell(
-                  child: const Icon(Icons.search),
+                  // child: const Icon(Icons.search),
+                  child: Image.asset('images/nasim-logo.png'),
                   onTap: () {
                     if (kDebugMode) {
                       print("Search BTN Clicked!!1");
